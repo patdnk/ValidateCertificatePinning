@@ -1,3 +1,6 @@
 # ValidateCertificatePinning
 
-These are the code examples to follow the blog article found here: https://infinum.co/the-capsized-eight/266
+Work in progress...
+
+Based on the example: [https://infinum.co/the-capsized-eight/266](https://infinum.co/the-capsized-eight/266)
+
