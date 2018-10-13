@@ -1,4 +1,4 @@
-## ValidateCertificatePinning
+## Validate Certificate Pinning
 
 Work in progress, at the moment:
 
