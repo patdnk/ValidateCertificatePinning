@@ -9,8 +9,11 @@ Work in progress, at the moment:
 - Validate certificate pinning for:
 
 Alamofire default pin
+
 Alamofire with custom policy manager
+
 NSURLSession challange
+
 Alamofire + NSURLSession
 
 
