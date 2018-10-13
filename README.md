@@ -1,3 +1,3 @@
-# SSL pinning in Swift
+# ValidateCertificatePinning
 
 These are the code examples to follow the blog article found here: https://infinum.co/the-capsized-eight/266
