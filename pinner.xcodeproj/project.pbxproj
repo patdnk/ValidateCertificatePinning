@@ -18,6 +18,7 @@
 		49F5C84B1F6BCA2700D3F8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F5C8491F6BCA2700D3F8FB /* LaunchScreen.storyboard */; };
 		8C2558802171CDE400F2B9A1 /* httpbinorg.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */; };
 		8C2558812171D22100F2B9A1 /* httpbinorg.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */; };
+		8C2558832173182D00F2B9A1 /* DownloadSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		49F5C84C1F6BCA2700D3F8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpbinorg.crt; sourceTree = "<group>"; };
 		8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpbinorg.cer; sourceTree = "<group>"; };
+		8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
 		8CFCEAFB2474202BC21E003D /* Pods-pinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.release.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.release.xcconfig"; sourceTree = "<group>"; };
 		9F8A7A9936674CF05425908E /* Pods-pinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.debug.xcconfig"; sourceTree = "<group>"; };
 		F5BB9469EFB703639891AEF9 /* Pods_pinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				49F5C8421F6BCA2700D3F8FB /* ViewController.swift */,
 				490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */,
 				490CFE941F72D63300EB83BF /* CustomSessionDelegate.swift */,
+				8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */,
 				49F5C8441F6BCA2700D3F8FB /* Main.storyboard */,
 				49F5C8471F6BCA2700D3F8FB /* Assets.xcassets */,
 				49F5C8491F6BCA2700D3F8FB /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2558832173182D00F2B9A1 /* DownloadSessionDelegate.swift in Sources */,
 				490CFE951F72D63300EB83BF /* CustomSessionDelegate.swift in Sources */,
 				490CFE8F1F71783100EB83BF /* CustomServerTrustPolicyManager.swift in Sources */,
 				49F5C8431F6BCA2700D3F8FB /* ViewController.swift in Sources */,

@@ -27,7 +27,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return ""
             }
         }
-        
     }
     
     override func viewDidLoad() {
@@ -113,6 +112,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.resultLabel.text = ""
+        }
+    }
+    
+    @IBAction func didPressDownloadButton(_ sender: Any) {
+        sessionManager = SessionManager(
+            delegate: DownloadSessionDelegate(),
+            serverTrustPolicyManager: CustomServerTrustPolicyManager(
+                policies: [:]
+            )
+        )
+        
+        sessionManager.request(url).response { response in
+            self.showResult(success: response.response != nil)
         }
     }
     
