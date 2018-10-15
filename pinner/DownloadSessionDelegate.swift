@@ -23,6 +23,7 @@ class DownloadSessionDelegate: SessionDelegate {
             if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0) {
                 let data = SecCertificateCopyData(serverCertificate) as Data
                 self.save(data: data)
+                GPCertUtils.dump()
                 
                 completion(.useCredential, URLCredential(trust: trust))
                 return
