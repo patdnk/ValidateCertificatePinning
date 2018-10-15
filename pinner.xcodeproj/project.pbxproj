@@ -35,6 +35,7 @@
 		8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpbinorg.crt; sourceTree = "<group>"; };
 		8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpbinorg.cer; sourceTree = "<group>"; };
 		8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
+		8CEFD9D1217442B500F05D6E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8CFCEAFB2474202BC21E003D /* Pods-pinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.release.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.release.xcconfig"; sourceTree = "<group>"; };
 		9F8A7A9936674CF05425908E /* Pods-pinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.debug.xcconfig"; sourceTree = "<group>"; };
 		F5BB9469EFB703639891AEF9 /* Pods_pinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +73,7 @@
 		49F5C8341F6BCA2700D3F8FB = {
 			isa = PBXGroup;
 			children = (
+				8CEFD9D1217442B500F05D6E /* README.md */,
 				49F5C83F1F6BCA2700D3F8FB /* pinner */,
 				49F5C83E1F6BCA2700D3F8FB /* Products */,
 				2D62074DC54AFD8C918B1FC3 /* Pods */,

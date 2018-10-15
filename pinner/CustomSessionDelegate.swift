@@ -17,7 +17,6 @@ class CustomSessionDelegate: SessionDelegate {
     override init() {
         super.init()
         
-        // Alamofire uses a block var here
         sessionDidReceiveChallengeWithCompletion = { session, challenge, completion in
             guard let trust = challenge.protectionSpace.serverTrust, SecTrustGetCertificateCount(trust) > 0 else {
                 // This case will probably get handled by ATS, but still...
@@ -44,7 +43,7 @@ class CustomSessionDelegate: SessionDelegate {
                         return
                     }
                 }
-//
+
 //
 //                if CustomSessionDelegate.pinnedKeys().contains(serverCertificateKey) {
 //                    completion(.useCredential, URLCredential(trust: trust))

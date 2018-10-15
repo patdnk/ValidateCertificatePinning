@@ -10,12 +10,11 @@ Work in progress, at the moment:
 	- Alamofire with custom policy manager
 	- NSURLSession challenge
 	- Alamofire + NSURLSession
+- Retrieve and save in Bundle the public key from the server
 
 ### Todos
 
-- Retrieve and save in Bundle the public key from the server
 - Helper to convert certificate files in Bundle into array bytes 
-
 
 Based on the example: [https://infinum.co/the-capsized-eight/266](https://infinum.co/the-capsized-eight/266)
 

@@ -20,11 +20,10 @@ class DownloadSessionDelegate: SessionDelegate {
                 return
             }
             
-            if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0),
-                let serverCertificateKey = SecCertificateCopyPublicKey(serverCertificate)
-            {
-                // TODO: Convert and save public key
-                print(self.data(publicKey: serverCertificateKey)!)
+            if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0) {
+                let data = SecCertificateCopyData(serverCertificate) as Data
+                self.save(data: data)
+                
                 completion(.useCredential, URLCredential(trust: trust))
                 return
             }
@@ -41,6 +40,18 @@ class DownloadSessionDelegate: SessionDelegate {
             return b64Key
         }
         return nil
+    }
+    
+    private func save(data: Data) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent("Certificate.der")
+            print(fileURL)
+            do {
+                try data.write(to: fileURL)
+            } catch {
+                fatalError("Error saving certificate")
+            }
+        }
     }
     
 }

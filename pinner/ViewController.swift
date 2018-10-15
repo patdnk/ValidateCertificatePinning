@@ -33,6 +33,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         certificatesTableView.delegate = self
         certificatesTableView.dataSource = self
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshTable(_:)), for: .valueChanged)
+        certificatesTableView.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshTable(_ sender: Any) {
+        certificatesTableView.reloadData()
+        certificatesTableView.refreshControl?.endRefreshing()
     }
     
     // MARK: TableViewDelegate and DataSource
@@ -48,18 +56,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CertificatesCell", for: indexPath)
         cell.textLabel?.text = filename
+        cell.detailTextLabel?.text = fileUrl.absoluteString
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let file = certificatesFiles()[indexPath.row]
-        let url = URL(fileURLWithPath: file)
+        let url = URL(string: file)!
         
-        let filename = url.deletingPathExtension().lastPathComponent
-        let fileExtension = url.pathExtension
-     
-        if let selectedKey = key(forResource: filename, withExtension: fileExtension) {
+        if let selectedKey = key(url: url) {
             self.selectedKey = selectedKey
             customSessionDelegate.key = selectedKey
         } else {
@@ -70,17 +76,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deselectRow(at: indexPath, animated: true)
             selectedKey = nil
         }
-    
+        
+        print(url)
     }
     
     // MARK: Helpers
+    func certificatesFiles() -> [String] {
+        var all = certificatesFilesBundle()
+        all.append(contentsOf: certificatesFilesDocuments())
+        
+        return all
+    }
     
-    func certificatesFiles(in bundle: Bundle = Bundle.main) -> [String] {
+    func certificatesFilesBundle() -> [String] {
         let paths = Array([".cer", ".CER", ".crt", ".CRT", ".der", ".DER"].map { fileExtension in
-            bundle.paths(forResourcesOfType: fileExtension, inDirectory: nil)
+            Bundle.main.paths(forResourcesOfType: fileExtension, inDirectory: nil)
             }.joined())
 
-        return paths
+        return paths.map({
+            "file://\($0)"
+        })
+    }
+    
+    func certificatesFilesDocuments() -> [String] {
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil).map {
+                $0.absoluteString
+            }
+            return fileURLs
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+            fatalError("Error reading document dir")
+        }
+        
+        return []
     }
     
     func key(forResource resource: String, withExtension aExtension: String) -> SecKey? {
@@ -95,6 +126,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
 
+        return nil
+    }
+    
+    func key(url: URL) -> SecKey? {
+        do {
+            let pinnedCertificateData = try Data(contentsOf: url) as CFData
+            if let pinnedCertificate = SecCertificateCreateWithData(nil, pinnedCertificateData), let key = publicKey(for: pinnedCertificate) {
+                return key
+            }
+        } catch {
+            print(error)
+            return nil
+        }
         return nil
     }
 
@@ -125,6 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         sessionManager.request(url).response { response in
             self.showResult(success: response.response != nil)
+            self.certificatesTableView.reloadData()
         }
     }
     
