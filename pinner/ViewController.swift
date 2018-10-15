@@ -13,6 +13,7 @@ import Alamofire
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var sessionManager = SessionManager()
     let customSessionDelegate = CustomSessionDelegate()
+    let otherDelegate = SelftSignerSessionDelegate()
     var selectedKey: SecKey?
     
     @IBOutlet weak var urlTextField: UITextField!
@@ -177,9 +178,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func testWithNoPin() {
-        Alamofire.request(url).response { response in
-            self.showResult(success: response.response != nil)
-        }
+        let url = URL(string: self.url)!
+        let session = URLSession(configuration: .default, delegate: otherDelegate, delegateQueue: nil)
+
+        let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                self.showResult(success: response != nil)
+            }
+        })
+        task.resume()
     }
     
     @IBAction func testWithAlamofireDefaultPin() {
@@ -190,12 +197,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let aurl = URL(string: self.url)
         let domain = aurl!.host!
-        
+
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             domain: .pinPublicKeys(
                 publicKeys: [selectedKey!],
-                validateCertificateChain: true,
-                validateHost: true
+                validateCertificateChain: false,
+                validateHost: false
             )
         ]
         
@@ -207,6 +214,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         sessionManager.request(url).response { response in
             self.showResult(success: response.response != nil)
+            if (response.error != nil) {
+                print(response.error!)
+            }
         }
     }
     
@@ -221,8 +231,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             domain: .pinPublicKeys(
                 publicKeys: [selectedKey!],
-                validateCertificateChain: true,
-                validateHost: true
+                validateCertificateChain: false,
+                validateHost: false
             )
         ]
         
@@ -234,6 +244,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         sessionManager.request(url).response { response in
             self.showResult(success: response.response != nil)
+            if (response.error != nil) {
+                print(response.error!)
+            }
         }
     }
     
@@ -249,6 +262,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 self.showResult(success: response != nil)
+                if (error != nil) {
+                    print(error)
+                }
             }
         })
         task.resume()
@@ -269,6 +285,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         sessionManager.request(url).response { response in
             self.showResult(success: response.response != nil)
+            if (response.error != nil) {
+                print(response.error!)
+            }
         }
     }
     

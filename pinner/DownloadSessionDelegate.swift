@@ -49,7 +49,7 @@ class DownloadSessionDelegate: SessionDelegate {
             let now = Date()
             let formatter = DateFormatter()
             formatter.timeZone = TimeZone.current
-            formatter.dateFormat = "yyyy-MM-dd-HH:mm"
+            formatter.dateFormat = "yyyy-MM-dd--HH-mm"
             let dateString = formatter.string(from: now)
 
             let fileURL = dir.appendingPathComponent("Certificate_" + dateString + ".der")
