@@ -36,7 +36,8 @@ class CustomSessionDelegate: SessionDelegate {
 //            }
             
             // Or, compare the public keys
-            if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0), let serverCertificateKey = CustomSessionDelegate.publicKey(for: serverCertificate) {
+            if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0),
+                let serverCertificateKey = SecCertificateCopyPublicKey(serverCertificate) {
                 if let key = self.key {
                     if key == serverCertificateKey {
                         completion(.useCredential, URLCredential(trust: trust))
@@ -87,19 +88,4 @@ class CustomSessionDelegate: SessionDelegate {
 //        return publicKeys
 //    }
     
-//    // Implementation from Alamofire
-   private static func publicKey(for certificate: SecCertificate) -> SecKey? {
-        var publicKey: SecKey?
-
-        let policy = SecPolicyCreateBasicX509()
-        var trust: SecTrust?
-        let trustCreationStatus = SecTrustCreateWithCertificates(certificate, policy, &trust)
-
-        if let trust = trust, trustCreationStatus == errSecSuccess {
-            publicKey = SecTrustCopyPublicKey(trust)
-        }
-
-        return publicKey
-    }
-
 }

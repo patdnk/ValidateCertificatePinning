@@ -21,10 +21,9 @@ class DownloadSessionDelegate: SessionDelegate {
             }
             
             if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0),
-                let serverCertificateKey = self.publicKey(for: serverCertificate)
+                let serverCertificateKey = SecCertificateCopyPublicKey(serverCertificate)
             {
                 // TODO: Convert and save public key
-                print(serverCertificateKey)
                 print(self.data(publicKey: serverCertificateKey)!)
                 completion(.useCredential, URLCredential(trust: trust))
                 return
@@ -32,23 +31,6 @@ class DownloadSessionDelegate: SessionDelegate {
             
             completion(.cancelAuthenticationChallenge, nil)
         }
-    }
-    
-    
-    private func publicKey(for certificate: SecCertificate) -> SecKey? {
-        var publicKey: SecKey?
-
-        let policy = SecPolicyCreateBasicX509()
-        var trust: SecTrust?
-        let trustCreationStatus = SecTrustCreateWithCertificates(certificate, policy, &trust)
-
-        if let trust = trust, trustCreationStatus == errSecSuccess {
-            publicKey = SecTrustCopyPublicKey(trust)
-        }
-
-        return publicKey
-        
-//        return SecCertificateCopyPublicKey(certificate)
     }
     
     private func data(publicKey: SecKey) -> String? {
