@@ -44,8 +44,15 @@ class DownloadSessionDelegate: SessionDelegate {
     
     private func save(data: Data) {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let fileURL = dir.appendingPathComponent("Certificate.der")
-            print(fileURL)
+            
+            let now = Date()
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone.current
+            formatter.dateFormat = "yyyy-MM-dd-HH:mm"
+            let dateString = formatter.string(from: now)
+
+            let fileURL = dir.appendingPathComponent("Certificate_" + dateString + ".der")
+            
             do {
                 try data.write(to: fileURL)
             } catch {

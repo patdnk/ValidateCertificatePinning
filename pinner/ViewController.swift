@@ -33,9 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         certificatesTableView.delegate = self
         certificatesTableView.dataSource = self
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refreshTable(_:)), for: .valueChanged)
-        certificatesTableView.refreshControl = refreshControl
+        certificatesTableView.refreshControl = UIRefreshControl()
+        certificatesTableView.refreshControl?.addTarget(self, action: #selector(refreshTable(_:)), for: .valueChanged)
     }
     
     @objc private func refreshTable(_ sender: Any) {
@@ -105,7 +104,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil).map {
                 $0.absoluteString
             }
-            return fileURLs
+            
+            let namePredicate = NSPredicate(format: "self ENDSWITH '.der'");
+            let filteredArray = fileURLs.filter { namePredicate.evaluate(with: $0) };
+        
+            return filteredArray
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
             fatalError("Error reading document dir")
@@ -212,9 +215,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             showSelectedKeyMessage()
             return
         }
+        let aurl = URL(string: self.url)
+        let domain = aurl!.host!
         
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "httpbin.org": .pinPublicKeys(
+            domain: .pinPublicKeys(
                 publicKeys: [selectedKey!],
                 validateCertificateChain: true,
                 validateHost: true
