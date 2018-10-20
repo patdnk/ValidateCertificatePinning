@@ -263,7 +263,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.main.async {
                 self.showResult(success: response != nil)
                 if (error != nil) {
-                    print(error)
+                    print(error!)
                 }
             }
         })

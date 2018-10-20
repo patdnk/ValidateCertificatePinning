@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ASN1Decoder
 
 class CustomSessionDelegate: SessionDelegate {
     
@@ -50,6 +51,10 @@ class CustomSessionDelegate: SessionDelegate {
 //                    return
 //                }
             }
+            
+            
+            //
+            
             
             completion(.cancelAuthenticationChallenge, nil)
         }

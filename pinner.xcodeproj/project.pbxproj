@@ -96,9 +96,6 @@
 		49F5C83F1F6BCA2700D3F8FB /* pinner */ = {
 			isa = PBXGroup;
 			children = (
-				8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */,
-				8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */,
-				490CFE901F72574E00EB83BF /* infinumco.crt */,
 				49F5C8401F6BCA2700D3F8FB /* AppDelegate.swift */,
 				49F5C8421F6BCA2700D3F8FB /* ViewController.swift */,
 				490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */,
@@ -106,12 +103,31 @@
 				1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */,
 				8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */,
 				1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */,
+				8C215FF9217B037C0027E7B9 /* Certificates */,
+				8C215FF8217B035C0027E7B9 /* Support Files */,
+			);
+			path = pinner;
+			sourceTree = "<group>";
+		};
+		8C215FF8217B035C0027E7B9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				49F5C8441F6BCA2700D3F8FB /* Main.storyboard */,
 				49F5C8471F6BCA2700D3F8FB /* Assets.xcassets */,
 				49F5C8491F6BCA2700D3F8FB /* LaunchScreen.storyboard */,
 				49F5C84C1F6BCA2700D3F8FB /* Info.plist */,
 			);
-			path = pinner;
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		8C215FF9217B037C0027E7B9 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */,
+				8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */,
+				490CFE901F72574E00EB83BF /* infinumco.crt */,
+			);
+			path = Certificates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63B3QD8Z4R;
-				INFOPLIST_FILE = pinner/Info.plist;
+				INFOPLIST_FILE = "pinner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63B3QD8Z4R;
-				INFOPLIST_FILE = pinner/Info.plist;
+				INFOPLIST_FILE = "pinner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
