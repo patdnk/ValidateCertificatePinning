@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1CB9EA9A2174C47C000E0EE4 /* GPCertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */; };
-		1CB9EA9C2174DE50000E0EE4 /* Monster_2018-10-15--15-39.der in Resources */ = {isa = PBXBuildFile; fileRef = 1CB9EA9B2174DE50000E0EE4 /* Monster_2018-10-15--15-39.der */; };
 		1CB9EA9E2174E130000E0EE4 /* SelftSignerSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */; };
 		33FC3624A97CD486BD41B9AD /* Pods_pinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BB9469EFB703639891AEF9 /* Pods_pinner.framework */; };
 		490CFE8F1F71783100EB83BF /* CustomServerTrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPCertUtils.swift; sourceTree = "<group>"; };
-		1CB9EA9B2174DE50000E0EE4 /* Monster_2018-10-15--15-39.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Monster_2018-10-15--15-39.der"; sourceTree = "<group>"; };
 		1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelftSignerSessionDelegate.swift; sourceTree = "<group>"; };
 		490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServerTrustPolicyManager.swift; sourceTree = "<group>"; };
 		490CFE901F72574E00EB83BF /* infinumco.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = infinumco.crt; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		49F5C83F1F6BCA2700D3F8FB /* pinner */ = {
 			isa = PBXGroup;
 			children = (
-				1CB9EA9B2174DE50000E0EE4 /* Monster_2018-10-15--15-39.der */,
 				8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */,
 				8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */,
 				490CFE901F72574E00EB83BF /* infinumco.crt */,
@@ -180,7 +177,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB9EA9C2174DE50000E0EE4 /* Monster_2018-10-15--15-39.der in Resources */,
 				490CFE911F72574E00EB83BF /* infinumco.crt in Resources */,
 				49F5C84B1F6BCA2700D3F8FB /* LaunchScreen.storyboard in Resources */,
 				8C2558812171D22100F2B9A1 /* httpbinorg.crt in Resources */,
