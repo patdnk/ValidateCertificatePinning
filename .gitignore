@@ -1,5 +1,5 @@
-./pinner/Certificates/momo-ca.1.crt.DER
-./pinner/Certificates/moneymonster.local.DER
+momo-ca.1.crt.DER
+moneymonster.local.DER
 
 # Created by https://www.gitignore.io/api/osx,swift,xcode
 
