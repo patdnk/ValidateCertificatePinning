@@ -18,10 +18,27 @@
 		49F5C8461F6BCA2700D3F8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F5C8441F6BCA2700D3F8FB /* Main.storyboard */; };
 		49F5C8481F6BCA2700D3F8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F5C8471F6BCA2700D3F8FB /* Assets.xcassets */; };
 		49F5C84B1F6BCA2700D3F8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F5C8491F6BCA2700D3F8FB /* LaunchScreen.storyboard */; };
+		8C215FFB217B11A10027E7B9 /* moneymonster.local.DER in Resources */ = {isa = PBXBuildFile; fileRef = 8C215FFA217B11A10027E7B9 /* moneymonster.local.DER */; };
+		8C216003217B136E0027E7B9 /* pinnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C216002217B136E0027E7B9 /* pinnerTests.swift */; };
+		8C21600A217B13960027E7B9 /* moneymonster.local.DER in Resources */ = {isa = PBXBuildFile; fileRef = 8C215FFA217B11A10027E7B9 /* moneymonster.local.DER */; };
 		8C2558802171CDE400F2B9A1 /* httpbinorg.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */; };
 		8C2558812171D22100F2B9A1 /* httpbinorg.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */; };
 		8C2558832173182D00F2B9A1 /* DownloadSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */; };
+		8C8C0909217B21E400115591 /* NOTES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8C0908217B21E400115591 /* NOTES.txt */; };
+		8C8C090B217B25D500115591 /* momo-ca.1.crt.DER in Resources */ = {isa = PBXBuildFile; fileRef = 8C8C090A217B25D500115591 /* momo-ca.1.crt.DER */; };
+		8C8C0911217B2F0300115591 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8C0910217B2F0300115591 /* Security.framework */; };
+		F101795BB50007441F93E389 /* Pods_pinnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FFCACB8318F1D6CCD88153 /* Pods_pinnerTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C216005217B136E0027E7B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49F5C8351F6BCA2700D3F8FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49F5C83C1F6BCA2700D3F8FB;
+			remoteInfo = pinner;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPCertUtils.swift; sourceTree = "<group>"; };
@@ -36,9 +53,19 @@
 		49F5C8471F6BCA2700D3F8FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F5C84A1F6BCA2700D3F8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49F5C84C1F6BCA2700D3F8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6CCEDEFB60C744FB8CA360 /* Pods-pinnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinnerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pinnerTests/Pods-pinnerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		749371F37A89C35F3E5D9F67 /* Pods-pinnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinnerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pinnerTests/Pods-pinnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		80FFCACB8318F1D6CCD88153 /* Pods_pinnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pinnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C215FFA217B11A10027E7B9 /* moneymonster.local.DER */ = {isa = PBXFileReference; lastKnownFileType = file; path = moneymonster.local.DER; sourceTree = "<group>"; };
+		8C216000217B136E0027E7B9 /* pinnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pinnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C216002217B136E0027E7B9 /* pinnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinnerTests.swift; sourceTree = "<group>"; };
+		8C216004217B136E0027E7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpbinorg.crt; sourceTree = "<group>"; };
 		8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpbinorg.cer; sourceTree = "<group>"; };
 		8C2558822173182D00F2B9A1 /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
+		8C8C0908217B21E400115591 /* NOTES.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTES.txt; sourceTree = "<group>"; };
+		8C8C090A217B25D500115591 /* momo-ca.1.crt.DER */ = {isa = PBXFileReference; lastKnownFileType = file; path = "momo-ca.1.crt.DER"; sourceTree = "<group>"; };
+		8C8C0910217B2F0300115591 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8CEFD9D1217442B500F05D6E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8CFCEAFB2474202BC21E003D /* Pods-pinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.release.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.release.xcconfig"; sourceTree = "<group>"; };
 		9F8A7A9936674CF05425908E /* Pods-pinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pinner/Pods-pinner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +77,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8C0911217B2F0300115591 /* Security.framework in Frameworks */,
 				33FC3624A97CD486BD41B9AD /* Pods_pinner.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C215FFD217B136E0027E7B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F101795BB50007441F93E389 /* Pods_pinnerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +96,9 @@
 		0DA612D8E7DC89C7311E2E49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C8C0910217B2F0300115591 /* Security.framework */,
 				F5BB9469EFB703639891AEF9 /* Pods_pinner.framework */,
+				80FFCACB8318F1D6CCD88153 /* Pods_pinnerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,6 +108,8 @@
 			children = (
 				9F8A7A9936674CF05425908E /* Pods-pinner.debug.xcconfig */,
 				8CFCEAFB2474202BC21E003D /* Pods-pinner.release.xcconfig */,
+				6C6CCEDEFB60C744FB8CA360 /* Pods-pinnerTests.debug.xcconfig */,
+				749371F37A89C35F3E5D9F67 /* Pods-pinnerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -77,8 +117,10 @@
 		49F5C8341F6BCA2700D3F8FB = {
 			isa = PBXGroup;
 			children = (
+				8C8C0908217B21E400115591 /* NOTES.txt */,
 				8CEFD9D1217442B500F05D6E /* README.md */,
 				49F5C83F1F6BCA2700D3F8FB /* pinner */,
+				8C216001217B136E0027E7B9 /* pinnerTests */,
 				49F5C83E1F6BCA2700D3F8FB /* Products */,
 				2D62074DC54AFD8C918B1FC3 /* Pods */,
 				0DA612D8E7DC89C7311E2E49 /* Frameworks */,
@@ -89,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				49F5C83D1F6BCA2700D3F8FB /* pinner.app */,
+				8C216000217B136E0027E7B9 /* pinnerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,11 +166,22 @@
 		8C215FF9217B037C0027E7B9 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
+				8C8C090A217B25D500115591 /* momo-ca.1.crt.DER */,
+				8C215FFA217B11A10027E7B9 /* moneymonster.local.DER */,
 				8C25587F2171CDE400F2B9A1 /* httpbinorg.cer */,
 				8C25587D2171CCBC00F2B9A1 /* httpbinorg.crt */,
 				490CFE901F72574E00EB83BF /* infinumco.crt */,
 			);
 			path = Certificates;
+			sourceTree = "<group>";
+		};
+		8C216001217B136E0027E7B9 /* pinnerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C216002217B136E0027E7B9 /* pinnerTests.swift */,
+				8C216004217B136E0027E7B9 /* Info.plist */,
+			);
+			path = pinnerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,13 +206,32 @@
 			productReference = 49F5C83D1F6BCA2700D3F8FB /* pinner.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8C215FFF217B136E0027E7B9 /* pinnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C216007217B136E0027E7B9 /* Build configuration list for PBXNativeTarget "pinnerTests" */;
+			buildPhases = (
+				93017EF697CA4D8164082F7B /* [CP] Check Pods Manifest.lock */,
+				8C215FFC217B136E0027E7B9 /* Sources */,
+				8C215FFD217B136E0027E7B9 /* Frameworks */,
+				8C215FFE217B136E0027E7B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C216006217B136E0027E7B9 /* PBXTargetDependency */,
+			);
+			name = pinnerTests;
+			productName = pinnerTests;
+			productReference = 8C216000217B136E0027E7B9 /* pinnerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		49F5C8351F6BCA2700D3F8FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Infinum;
 				TargetAttributes = {
@@ -166,6 +239,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+					};
+					8C215FFF217B136E0027E7B9 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 49F5C83C1F6BCA2700D3F8FB;
 					};
 				};
 			};
@@ -183,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				49F5C83C1F6BCA2700D3F8FB /* pinner */,
+				8C215FFF217B136E0027E7B9 /* pinnerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -196,8 +275,19 @@
 				49F5C84B1F6BCA2700D3F8FB /* LaunchScreen.storyboard in Resources */,
 				8C2558812171D22100F2B9A1 /* httpbinorg.crt in Resources */,
 				49F5C8481F6BCA2700D3F8FB /* Assets.xcassets in Resources */,
+				8C8C0909217B21E400115591 /* NOTES.txt in Resources */,
 				8C2558802171CDE400F2B9A1 /* httpbinorg.cer in Resources */,
+				8C8C090B217B25D500115591 /* momo-ca.1.crt.DER in Resources */,
 				49F5C8461F6BCA2700D3F8FB /* Main.storyboard in Resources */,
+				8C215FFB217B11A10027E7B9 /* moneymonster.local.DER in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C215FFE217B136E0027E7B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C21600A217B13960027E7B9 /* moneymonster.local.DER in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +306,28 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-pinner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93017EF697CA4D8164082F7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pinnerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -259,7 +371,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C215FFC217B136E0027E7B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C216003217B136E0027E7B9 /* pinnerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C216006217B136E0027E7B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49F5C83C1F6BCA2700D3F8FB /* pinner */;
+			targetProxy = 8C216005217B136E0027E7B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		49F5C8441F6BCA2700D3F8FB /* Main.storyboard */ = {
@@ -336,6 +464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "pinner/pinner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -387,6 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "pinner/pinner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -403,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,8 +550,50 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8C216008217B136E0027E7B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6CCEDEFB60C744FB8CA360 /* Pods-pinnerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = pinnerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = es.molestudio.pinnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinner.app/pinner";
+			};
+			name = Debug;
+		};
+		8C216009217B136E0027E7B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749371F37A89C35F3E5D9F67 /* Pods-pinnerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = pinnerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = es.molestudio.pinnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinner.app/pinner";
 			};
 			name = Release;
 		};
@@ -441,6 +614,15 @@
 			buildConfigurations = (
 				49F5C8501F6BCA2700D3F8FB /* Debug */,
 				49F5C8511F6BCA2700D3F8FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C216007217B136E0027E7B9 /* Build configuration list for PBXNativeTarget "pinnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C216008217B136E0027E7B9 /* Debug */,
+				8C216009217B136E0027E7B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

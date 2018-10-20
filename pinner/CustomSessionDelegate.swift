@@ -44,8 +44,21 @@ class CustomSessionDelegate: SessionDelegate {
                         return
                     }
                 }
-
-//
+                
+                
+                // MARK: Compare Certifica
+                if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0) {
+                    let serverCertificateData = SecCertificateCopyData(serverCertificate) as Data
+                    do {
+                        let x509 = try X509Certificate(data: serverCertificateData)
+                        
+                        let subject = x509.subjectDistinguishedName ?? ""
+                        
+                    } catch {
+                        print(error)
+                    }
+                }
+    
 //                if CustomSessionDelegate.pinnedKeys().contains(serverCertificateKey) {
 //                    completion(.useCredential, URLCredential(trust: trust))
 //                    return
