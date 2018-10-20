@@ -142,7 +142,6 @@
 				49F5C83A1F6BCA2700D3F8FB /* Frameworks */,
 				49F5C83B1F6BCA2700D3F8FB /* Resources */,
 				BE4B414D13246490758256F8 /* [CP] Embed Pods Frameworks */,
-				C9FC67947D7D59CBDCD1F22C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,30 +229,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ASN1Decoder/ASN1Decoder.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASN1Decoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9FC67947D7D59CBDCD1F22C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
