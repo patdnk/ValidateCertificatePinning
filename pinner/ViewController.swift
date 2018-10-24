@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.selectedKey = selectedKey
             customSessionDelegate.key = selectedKey
         } else {
-            let alert = UIAlertController(title: "Alert", message: "The file doesn´t contain a valid public Key", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Alert", message: "The file doesn´t contain a valid public Key", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
@@ -292,7 +292,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func showSelectedKeyMessage() {
-        let alert = UIAlertController(title: "Alert", message: "Select a file first", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Alert", message: "Select a file first", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
