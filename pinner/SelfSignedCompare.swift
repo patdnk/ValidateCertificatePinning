@@ -12,12 +12,11 @@ import CommonCrypto
 
 public struct STCertificateComponents {
     let signature: Data
-    let tbs: Data
-    let tbsString: String
+    let tbs: String
     let validDate: Bool
     var hashedTBS: String {
         get {
-            return SelfSignedCompare.sha256(string: tbsString)!.hexEncodedString()
+            return Data(bytes: Array<UInt8>(hex: tbs)).sha256().hexString
         }
     }
 }
@@ -73,10 +72,10 @@ public class SelfSignedCompare {
                 let beginning = sequences[1]
                 let end = sequences[sequences.count-2]
                 let tbs = String(allHexData[beginning..<end])
-                let tbsData = SelfSignedCompare.sha256(string: tbs)!//Data(bytes: Array<UInt8>(hex: tbs)).sha256()
+//                let tbsData = Data(bytes: Array<UInt8>(hex: tbs)).sha256() //SelfSignedCompare.sha256(string: tbs)!//
                 let validDate = x509Data.checkValidity(Date())
 
-                return STCertificateComponents.init(signature: signatureData, tbs: tbsData, tbsString: tbs, validDate: validDate)
+                return STCertificateComponents(signature: signatureData, tbs: tbs, validDate: validDate)
             }
 
         } catch {
@@ -173,6 +172,14 @@ extension Data {
         let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
         return map { String(format: format, $0) }.joined()
     }
+    
+    func sha256() -> Data {
+        var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
+        self.withUnsafeBytes {
+            _ = CC_SHA256($0, CC_LONG(self.count), &hash)
+        }
+        return Data(bytes: hash)
+    }
 
 }
 
@@ -236,3 +243,71 @@ extension Substring {
     }
 }
 
+extension Array {
+    init(reserveCapacity: Int) {
+        self = Array<Element>()
+        self.reserveCapacity(reserveCapacity)
+    }
+    
+    var slice: ArraySlice<Element> {
+        return self[self.startIndex..<self.endIndex]
+    }
+}
+
+extension Array {
+    
+    /// split in chunks with given chunk size
+    public func chunks(size chunksize: Int) -> Array<Array<Element>> {
+        var words = Array<Array<Element>>()
+        words.reserveCapacity(count / chunksize)
+        for idx in stride(from: chunksize, through: count, by: chunksize) {
+            words.append(Array(self[idx - chunksize..<idx])) // slow for large table
+        }
+        let remainder = suffix(count % chunksize)
+        if !remainder.isEmpty {
+            words.append(Array(remainder))
+        }
+        return words
+    }
+}
+
+extension Array where Element == UInt8 {
+    
+    public init(hex: String) {
+        self.init(reserveCapacity: hex.unicodeScalars.lazy.underestimatedCount)
+        var buffer: UInt8?
+        var skip = hex.hasPrefix("0x") ? 2 : 0
+        for char in hex.unicodeScalars.lazy {
+            guard skip == 0 else {
+                skip -= 1
+                continue
+            }
+            guard char.value >= 48 && char.value <= 102 else {
+                removeAll()
+                return
+            }
+            let v: UInt8
+            let c: UInt8 = UInt8(char.value)
+            switch c {
+            case let c where c <= 57:
+                v = c - 48
+            case let c where c >= 65 && c <= 70:
+                v = c - 55
+            case let c where c >= 97:
+                v = c - 87
+            default:
+                removeAll()
+                return
+            }
+            if let b = buffer {
+                append(b << 4 | v)
+                buffer = nil
+            } else {
+                buffer = v
+            }
+        }
+        if let b = buffer {
+            append(b)
+        }
+    }
+}
