@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1C668F5621820F0A003319F2 /* SelfSignedCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C668F5521820F0A003319F2 /* SelfSignedCompare.swift */; };
 		1CB9EA9A2174C47C000E0EE4 /* GPCertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */; };
 		1CB9EA9E2174E130000E0EE4 /* SelftSignerSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */; };
 		33FC3624A97CD486BD41B9AD /* Pods_pinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BB9469EFB703639891AEF9 /* Pods_pinner.framework */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C668F5521820F0A003319F2 /* SelfSignedCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSignedCompare.swift; sourceTree = "<group>"; };
 		1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPCertUtils.swift; sourceTree = "<group>"; };
 		1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelftSignerSessionDelegate.swift; sourceTree = "<group>"; };
 		490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServerTrustPolicyManager.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */,
 				8C215FF9217B037C0027E7B9 /* Certificates */,
 				8C215FF8217B035C0027E7B9 /* Support Files */,
+				1C668F5521820F0A003319F2 /* SelfSignedCompare.swift */,
 			);
 			path = pinner;
 			sourceTree = "<group>";
@@ -379,15 +382,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ASN1Decoder/ASN1Decoder.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASN1Decoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -406,6 +405,7 @@
 				490CFE951F72D63300EB83BF /* CustomSessionDelegate.swift in Sources */,
 				490CFE8F1F71783100EB83BF /* CustomServerTrustPolicyManager.swift in Sources */,
 				49F5C8431F6BCA2700D3F8FB /* ViewController.swift in Sources */,
+				1C668F5621820F0A003319F2 /* SelfSignedCompare.swift in Sources */,
 				1CB9EA9A2174C47C000E0EE4 /* GPCertUtils.swift in Sources */,
 				49F5C8411F6BCA2700D3F8FB /* AppDelegate.swift in Sources */,
 			);

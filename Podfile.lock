@@ -1,30 +1,20 @@
 PODS:
   - Alamofire (4.7.3)
   - ASN1Decoder (1.2)
-  - CryptoSwift (0.8.3)
-  - SwiftyRSA (1.5.0):
-    - SwiftyRSA/ObjC (= 1.5.0)
-  - SwiftyRSA/ObjC (1.5.0)
 
 DEPENDENCIES:
   - Alamofire
   - ASN1Decoder
-  - CryptoSwift (= 0.8.3)
-  - SwiftyRSA
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ASN1Decoder
-    - CryptoSwift
-    - SwiftyRSA
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   ASN1Decoder: 1a1f4fa469e14083f2664e182975a39299cb5e32
-  CryptoSwift: 033efc3523865d19cc6ab6612fa17a62613b5dfa
-  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: de5768c4795412edec0c1f87ec93967ed9e2d0bc
+PODFILE CHECKSUM: 1e37696e7bd0b35aa76620d9f023c5456f32da79
 
 COCOAPODS: 1.5.3
