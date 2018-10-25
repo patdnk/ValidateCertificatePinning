@@ -6,6 +6,20 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1C668F4E2181CFDB003319F2 /* CommonCrypto */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C668F512181CFDB003319F2 /* Build configuration list for PBXAggregateTarget "CommonCrypto" */;
+			buildPhases = (
+				1C668F522181CFE0003319F2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1CB9EA9A2174C47C000E0EE4 /* GPCertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA992174C47C000E0EE4 /* GPCertUtils.swift */; };
 		1CB9EA9E2174E130000E0EE4 /* SelftSignerSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB9EA9D2174E12F000E0EE4 /* SelftSignerSessionDelegate.swift */; };
@@ -31,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1C668F532181D01B003319F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49F5C8351F6BCA2700D3F8FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C668F4E2181CFDB003319F2;
+			remoteInfo = CommonCrypto;
+		};
 		8C216005217B136E0027E7B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49F5C8351F6BCA2700D3F8FB /* Project object */;
@@ -200,6 +221,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1C668F542181D01B003319F2 /* PBXTargetDependency */,
 			);
 			name = pinner;
 			productName = pinner;
@@ -235,6 +257,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Infinum;
 				TargetAttributes = {
+					1C668F4E2181CFDB003319F2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					49F5C83C1F6BCA2700D3F8FB = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1000;
@@ -262,6 +288,7 @@
 			targets = (
 				49F5C83C1F6BCA2700D3F8FB /* pinner */,
 				8C215FFF217B136E0027E7B9 /* pinnerTests */,
+				1C668F4E2181CFDB003319F2 /* CommonCrypto */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +321,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C668F522181CFE0003319F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
+		};
 		837859FAA51FC80B0DBA9860 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,12 +380,14 @@
 				"${BUILT_PRODUCTS_DIR}/ASN1Decoder/ASN1Decoder.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASN1Decoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -380,6 +422,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C668F542181D01B003319F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C668F4E2181CFDB003319F2 /* CommonCrypto */;
+			targetProxy = 1C668F532181D01B003319F2 /* PBXContainerItemProxy */;
+		};
 		8C216006217B136E0027E7B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49F5C83C1F6BCA2700D3F8FB /* pinner */;
@@ -407,6 +454,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1C668F4F2181CFDB003319F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R4BWWRWVX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1C668F502181CFDB003319F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R4BWWRWVX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		49F5C84D1F6BCA2700D3F8FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,6 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63B3QD8Z4R;
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap";
 				INFOPLIST_FILE = "pinner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
@@ -544,6 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63B3QD8Z4R;
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap";
 				INFOPLIST_FILE = "pinner/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.infinum.pinner;
@@ -598,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C668F512181CFDB003319F2 /* Build configuration list for PBXAggregateTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C668F4F2181CFDB003319F2 /* Debug */,
+				1C668F502181CFDB003319F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49F5C8381F6BCA2700D3F8FB /* Build configuration list for PBXProject "pinner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
